@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiWeather.Views.WeatherPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:MauiWeather.ViewModels"
+    Title="WeatherPage"
+    x:DataType="vm:WeatherPageViewModel">
+
+    <Grid
+        RowDefinitions="Auto,Auto,Auto,Auto"
+        RowSpacing="20">
+        <StackLayout
+            Margin="20,20,20,0"
+            Orientation="Horizontal">
+            <Border
+                Padding="10"
+                Stroke="LightGray">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="35" />
+                </Border.StrokeShape>
+                <Label
+                    FontAttributes="Bold"
+                    Text="Your Location" />
+            </Border>
+            <ImageButton
+                HeightRequest="30"
+                HorizontalOptions="EndAndExpand"
+                Source="searchweather.png"
+                WidthRequest="30" />
+        </StackLayout>
+
+        <StackLayout Grid.Row="1">
+            <Label
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalTextAlignment="Center"
+                Text="City Name"
+                TextColor="Gray" />
+
+            <Label
+                Margin="10"
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Text="Weather Description"
+                TextColor="SlateGray" />
+        </StackLayout>
+
+        <!--  TODO: Bind to the image  -->
+        <Image
+            Grid.Row="2"
+            HeightRequest="300"
+            Source="dotnet_bot.png"
+            VerticalOptions="Start"
+            WidthRequest="300" />
+
+        <Grid
+            Grid.Row="3"
+            Margin="20"
+            ColumnDefinitions="0.30*,0.30*,0.30*"
+            RowDefinitions="Auto,Auto">
+
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                HeightRequest="25"
+                Source="humidity.png" />
+
+            <Label
+                Grid.Row="1"
+                Grid.Column="0"
+                HorizontalTextAlignment="Center"
+                Text="humidity" />
+
+            <Label
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                FontAttributes="Bold"
+                FontSize="40"
+                HorizontalTextAlignment="Center"
+                Text="25" />
+
+            <Image Grid.Row="0"
+                   Grid.Column="2"
+                   HeightRequest="25"
+                   Source="wind.png" />
+
+            <Label Grid.Row="1"
+                   Grid.Column="2"
+                   HorizontalTextAlignment="Center"
+                   Text="wind" />
+
+
+        </Grid>
+    </Grid>
+</ContentPage>
